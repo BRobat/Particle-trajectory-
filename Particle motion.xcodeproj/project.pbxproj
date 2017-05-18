@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7AC5315D1ECE3A6700733CED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5315C1ECE3A6700733CED /* AppDelegate.swift */; };
+		7AC5315F1ECE3A6700733CED /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5315E1ECE3A6700733CED /* GameScene.sks */; };
+		7AC531611ECE3A6700733CED /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7AC531601ECE3A6700733CED /* Actions.sks */; };
+		7AC531631ECE3A6700733CED /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC531621ECE3A6700733CED /* GameScene.swift */; };
+		7AC531651ECE3A6700733CED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC531641ECE3A6700733CED /* ViewController.swift */; };
+		7AC531671ECE3A6700733CED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC531661ECE3A6700733CED /* Assets.xcassets */; };
+		7AC5316A1ECE3A6800733CED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC531681ECE3A6800733CED /* Main.storyboard */; };
+		7AC531751ECE3A6800733CED /* Particle_motionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC531741ECE3A6800733CED /* Particle_motionTests.swift */; };
+		7AC531801ECE3A6800733CED /* Particle_motionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5317F1ECE3A6800733CED /* Particle_motionUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AC531711ECE3A6800733CED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AC531511ECE3A6700733CED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AC531581ECE3A6700733CED;
+			remoteInfo = "Particle motion";
+		};
+		7AC5317C1ECE3A6800733CED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AC531511ECE3A6700733CED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AC531581ECE3A6700733CED;
+			remoteInfo = "Particle motion";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7AC531591ECE3A6700733CED /* Particle motion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Particle motion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AC5315C1ECE3A6700733CED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7AC5315E1ECE3A6700733CED /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		7AC531601ECE3A6700733CED /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		7AC531621ECE3A6700733CED /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		7AC531641ECE3A6700733CED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7AC531661ECE3A6700733CED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7AC531691ECE3A6800733CED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7AC5316B1ECE3A6800733CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AC531701ECE3A6800733CED /* Particle motionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Particle motionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AC531741ECE3A6800733CED /* Particle_motionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle_motionTests.swift; sourceTree = "<group>"; };
+		7AC531761ECE3A6800733CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AC5317B1ECE3A6800733CED /* Particle motionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Particle motionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AC5317F1ECE3A6800733CED /* Particle_motionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle_motionUITests.swift; sourceTree = "<group>"; };
+		7AC531811ECE3A6800733CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7AC531561ECE3A6700733CED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AC5316D1ECE3A6800733CED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AC531781ECE3A6800733CED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7AC531501ECE3A6700733CED = {
+			isa = PBXGroup;
+			children = (
+				7AC5315B1ECE3A6700733CED /* Particle motion */,
+				7AC531731ECE3A6800733CED /* Particle motionTests */,
+				7AC5317E1ECE3A6800733CED /* Particle motionUITests */,
+				7AC5315A1ECE3A6700733CED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7AC5315A1ECE3A6700733CED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7AC531591ECE3A6700733CED /* Particle motion.app */,
+				7AC531701ECE3A6800733CED /* Particle motionTests.xctest */,
+				7AC5317B1ECE3A6800733CED /* Particle motionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7AC5315B1ECE3A6700733CED /* Particle motion */ = {
+			isa = PBXGroup;
+			children = (
+				7AC5315C1ECE3A6700733CED /* AppDelegate.swift */,
+				7AC5315E1ECE3A6700733CED /* GameScene.sks */,
+				7AC531601ECE3A6700733CED /* Actions.sks */,
+				7AC531621ECE3A6700733CED /* GameScene.swift */,
+				7AC531641ECE3A6700733CED /* ViewController.swift */,
+				7AC531661ECE3A6700733CED /* Assets.xcassets */,
+				7AC531681ECE3A6800733CED /* Main.storyboard */,
+				7AC5316B1ECE3A6800733CED /* Info.plist */,
+			);
+			path = "Particle motion";
+			sourceTree = "<group>";
+		};
+		7AC531731ECE3A6800733CED /* Particle motionTests */ = {
+			isa = PBXGroup;
+			children = (
+				7AC531741ECE3A6800733CED /* Particle_motionTests.swift */,
+				7AC531761ECE3A6800733CED /* Info.plist */,
+			);
+			path = "Particle motionTests";
+			sourceTree = "<group>";
+		};
+		7AC5317E1ECE3A6800733CED /* Particle motionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7AC5317F1ECE3A6800733CED /* Particle_motionUITests.swift */,
+				7AC531811ECE3A6800733CED /* Info.plist */,
+			);
+			path = "Particle motionUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7AC531581ECE3A6700733CED /* Particle motion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AC531841ECE3A6800733CED /* Build configuration list for PBXNativeTarget "Particle motion" */;
+			buildPhases = (
+				7AC531551ECE3A6700733CED /* Sources */,
+				7AC531561ECE3A6700733CED /* Frameworks */,
+				7AC531571ECE3A6700733CED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Particle motion";
+			productName = "Particle motion";
+			productReference = 7AC531591ECE3A6700733CED /* Particle motion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7AC5316F1ECE3A6800733CED /* Particle motionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AC531871ECE3A6800733CED /* Build configuration list for PBXNativeTarget "Particle motionTests" */;
+			buildPhases = (
+				7AC5316C1ECE3A6800733CED /* Sources */,
+				7AC5316D1ECE3A6800733CED /* Frameworks */,
+				7AC5316E1ECE3A6800733CED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AC531721ECE3A6800733CED /* PBXTargetDependency */,
+			);
+			name = "Particle motionTests";
+			productName = "Particle motionTests";
+			productReference = 7AC531701ECE3A6800733CED /* Particle motionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7AC5317A1ECE3A6800733CED /* Particle motionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AC5318A1ECE3A6800733CED /* Build configuration list for PBXNativeTarget "Particle motionUITests" */;
+			buildPhases = (
+				7AC531771ECE3A6800733CED /* Sources */,
+				7AC531781ECE3A6800733CED /* Frameworks */,
+				7AC531791ECE3A6800733CED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AC5317D1ECE3A6800733CED /* PBXTargetDependency */,
+			);
+			name = "Particle motionUITests";
+			productName = "Particle motionUITests";
+			productReference = 7AC5317B1ECE3A6800733CED /* Particle motionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7AC531511ECE3A6700733CED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Tohil;
+				TargetAttributes = {
+					7AC531581ECE3A6700733CED = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MD223F7P7W;
+						ProvisioningStyle = Automatic;
+					};
+					7AC5316F1ECE3A6800733CED = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MD223F7P7W;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7AC531581ECE3A6700733CED;
+					};
+					7AC5317A1ECE3A6800733CED = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MD223F7P7W;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7AC531581ECE3A6700733CED;
+					};
+				};
+			};
+			buildConfigurationList = 7AC531541ECE3A6700733CED /* Build configuration list for PBXProject "Particle motion" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7AC531501ECE3A6700733CED;
+			productRefGroup = 7AC5315A1ECE3A6700733CED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7AC531581ECE3A6700733CED /* Particle motion */,
+				7AC5316F1ECE3A6800733CED /* Particle motionTests */,
+				7AC5317A1ECE3A6800733CED /* Particle motionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7AC531571ECE3A6700733CED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AC5315F1ECE3A6700733CED /* GameScene.sks in Resources */,
+				7AC531671ECE3A6700733CED /* Assets.xcassets in Resources */,
+				7AC531611ECE3A6700733CED /* Actions.sks in Resources */,
+				7AC5316A1ECE3A6800733CED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AC5316E1ECE3A6800733CED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AC531791ECE3A6800733CED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7AC531551ECE3A6700733CED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AC531651ECE3A6700733CED /* ViewController.swift in Sources */,
+				7AC531631ECE3A6700733CED /* GameScene.swift in Sources */,
+				7AC5315D1ECE3A6700733CED /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AC5316C1ECE3A6800733CED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AC531751ECE3A6800733CED /* Particle_motionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AC531771ECE3A6800733CED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AC531801ECE3A6800733CED /* Particle_motionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AC531721ECE3A6800733CED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AC531581ECE3A6700733CED /* Particle motion */;
+			targetProxy = 7AC531711ECE3A6800733CED /* PBXContainerItemProxy */;
+		};
+		7AC5317D1ECE3A6800733CED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AC531581ECE3A6700733CED /* Particle motion */;
+			targetProxy = 7AC5317C1ECE3A6800733CED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7AC531681ECE3A6800733CED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AC531691ECE3A6800733CED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7AC531821ECE3A6800733CED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7AC531831ECE3A6800733CED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		7AC531851ECE3A6800733CED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MD223F7P7W;
+				INFOPLIST_FILE = "Particle motion/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Robat.Particle-motion";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7AC531861ECE3A6800733CED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MD223F7P7W;
+				INFOPLIST_FILE = "Particle motion/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Robat.Particle-motion";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7AC531881ECE3A6800733CED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MD223F7P7W;
+				INFOPLIST_FILE = "Particle motionTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Robat.Particle-motionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Particle motion.app/Contents/MacOS/Particle motion";
+			};
+			name = Debug;
+		};
+		7AC531891ECE3A6800733CED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MD223F7P7W;
+				INFOPLIST_FILE = "Particle motionTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Robat.Particle-motionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Particle motion.app/Contents/MacOS/Particle motion";
+			};
+			name = Release;
+		};
+		7AC5318B1ECE3A6800733CED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MD223F7P7W;
+				INFOPLIST_FILE = "Particle motionUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Robat.Particle-motionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Particle motion";
+			};
+			name = Debug;
+		};
+		7AC5318C1ECE3A6800733CED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MD223F7P7W;
+				INFOPLIST_FILE = "Particle motionUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Robat.Particle-motionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Particle motion";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7AC531541ECE3A6700733CED /* Build configuration list for PBXProject "Particle motion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AC531821ECE3A6800733CED /* Debug */,
+				7AC531831ECE3A6800733CED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AC531841ECE3A6800733CED /* Build configuration list for PBXNativeTarget "Particle motion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AC531851ECE3A6800733CED /* Debug */,
+				7AC531861ECE3A6800733CED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7AC531871ECE3A6800733CED /* Build configuration list for PBXNativeTarget "Particle motionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AC531881ECE3A6800733CED /* Debug */,
+				7AC531891ECE3A6800733CED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7AC5318A1ECE3A6800733CED /* Build configuration list for PBXNativeTarget "Particle motionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AC5318B1ECE3A6800733CED /* Debug */,
+				7AC5318C1ECE3A6800733CED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7AC531511ECE3A6700733CED /* Project object */;
+}
