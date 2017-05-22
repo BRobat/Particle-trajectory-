@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Particle motion
 //
-//  Created by Tohil on 18/05/2017.
-//  Copyright © 2017 Tohil. All rights reserved.
+//  Created by Bart Robat on 18/05/2017.
+//  Copyright © 2017 Bart Robat. All rights reserved.
 //
 
 

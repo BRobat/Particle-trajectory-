@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		7AC5315D1ECE3A6700733CED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5315C1ECE3A6700733CED /* AppDelegate.swift */; };
-		7AC5315F1ECE3A6700733CED /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7AC5315E1ECE3A6700733CED /* GameScene.sks */; };
-		7AC531611ECE3A6700733CED /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7AC531601ECE3A6700733CED /* Actions.sks */; };
-		7AC531631ECE3A6700733CED /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC531621ECE3A6700733CED /* GameScene.swift */; };
+		7AC531631ECE3A6700733CED /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC531621ECE3A6700733CED /* Scene.swift */; };
 		7AC531651ECE3A6700733CED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC531641ECE3A6700733CED /* ViewController.swift */; };
 		7AC531671ECE3A6700733CED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC531661ECE3A6700733CED /* Assets.xcassets */; };
 		7AC5316A1ECE3A6800733CED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC531681ECE3A6800733CED /* Main.storyboard */; };
 		7AC531751ECE3A6800733CED /* Particle_motionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC531741ECE3A6800733CED /* Particle_motionTests.swift */; };
 		7AC531801ECE3A6800733CED /* Particle_motionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC5317F1ECE3A6800733CED /* Particle_motionUITests.swift */; };
+		7AD417C01ED203430090F719 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD417BE1ED203430090F719 /* ViewController2.swift */; };
+		7AD417C31ED203820090F719 /* Euler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD417C21ED203820090F719 /* Euler.swift */; };
+		7AD417C51ED2038E0090F719 /* Euler.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7AD417C41ED2038E0090F719 /* Euler.sks */; };
+		7AD8DD751ED0BE2100B16089 /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7AD8DD741ED0BE2100B16089 /* Scene.sks */; };
+		7AD8DD791ED1927800B16089 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD8DD781ED1927800B16089 /* MenuView.swift */; };
+		7AD8DD7B1ED19FB800B16089 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD8DD7A1ED19FB800B16089 /* Logic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +42,7 @@
 /* Begin PBXFileReference section */
 		7AC531591ECE3A6700733CED /* Particle motion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Particle motion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC5315C1ECE3A6700733CED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7AC5315E1ECE3A6700733CED /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		7AC531601ECE3A6700733CED /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		7AC531621ECE3A6700733CED /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		7AC531621ECE3A6700733CED /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		7AC531641ECE3A6700733CED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7AC531661ECE3A6700733CED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AC531691ECE3A6800733CED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,12 @@
 		7AC5317B1ECE3A6800733CED /* Particle motionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Particle motionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC5317F1ECE3A6800733CED /* Particle_motionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle_motionUITests.swift; sourceTree = "<group>"; };
 		7AC531811ECE3A6800733CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AD417BE1ED203430090F719 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		7AD417C21ED203820090F719 /* Euler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Euler.swift; sourceTree = "<group>"; };
+		7AD417C41ED2038E0090F719 /* Euler.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Euler.sks; sourceTree = "<group>"; };
+		7AD8DD741ED0BE2100B16089 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
+		7AD8DD781ED1927800B16089 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		7AD8DD7A1ED19FB800B16089 /* Logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +109,17 @@
 		7AC5315B1ECE3A6700733CED /* Particle motion */ = {
 			isa = PBXGroup;
 			children = (
-				7AC5315C1ECE3A6700733CED /* AppDelegate.swift */,
-				7AC5315E1ECE3A6700733CED /* GameScene.sks */,
-				7AC531601ECE3A6700733CED /* Actions.sks */,
-				7AC531621ECE3A6700733CED /* GameScene.swift */,
+				7AD8DD741ED0BE2100B16089 /* Scene.sks */,
+				7AC531621ECE3A6700733CED /* Scene.swift */,
+				7AD417C21ED203820090F719 /* Euler.swift */,
+				7AD417C41ED2038E0090F719 /* Euler.sks */,
 				7AC531641ECE3A6700733CED /* ViewController.swift */,
+				7AD417BE1ED203430090F719 /* ViewController2.swift */,
+				7AD8DD781ED1927800B16089 /* MenuView.swift */,
+				7AD8DD7A1ED19FB800B16089 /* Logic.swift */,
 				7AC531661ECE3A6700733CED /* Assets.xcassets */,
 				7AC531681ECE3A6800733CED /* Main.storyboard */,
+				7AC5315C1ECE3A6700733CED /* AppDelegate.swift */,
 				7AC5316B1ECE3A6800733CED /* Info.plist */,
 			);
 			path = "Particle motion";
@@ -241,9 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC5315F1ECE3A6700733CED /* GameScene.sks in Resources */,
 				7AC531671ECE3A6700733CED /* Assets.xcassets in Resources */,
-				7AC531611ECE3A6700733CED /* Actions.sks in Resources */,
+				7AD417C51ED2038E0090F719 /* Euler.sks in Resources */,
+				7AD8DD751ED0BE2100B16089 /* Scene.sks in Resources */,
 				7AC5316A1ECE3A6800733CED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,8 +282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AC531651ECE3A6700733CED /* ViewController.swift in Sources */,
-				7AC531631ECE3A6700733CED /* GameScene.swift in Sources */,
+				7AD8DD7B1ED19FB800B16089 /* Logic.swift in Sources */,
+				7AD8DD791ED1927800B16089 /* MenuView.swift in Sources */,
+				7AC531631ECE3A6700733CED /* Scene.swift in Sources */,
+				7AD417C31ED203820090F719 /* Euler.swift in Sources */,
 				7AC5315D1ECE3A6700733CED /* AppDelegate.swift in Sources */,
+				7AD417C01ED203430090F719 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +535,7 @@
 				7AC531861ECE3A6800733CED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7AC531871ECE3A6800733CED /* Build configuration list for PBXNativeTarget "Particle motionTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +544,7 @@
 				7AC531891ECE3A6800733CED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7AC5318A1ECE3A6800733CED /* Build configuration list for PBXNativeTarget "Particle motionUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +553,7 @@
 				7AC5318C1ECE3A6800733CED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
