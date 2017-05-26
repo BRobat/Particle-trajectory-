@@ -6,11 +6,20 @@
 //  Copyright © 2017 Bart Robat. All rights reserved.
 //
 
+// Impotuję dwie biblioteki.
+// SpriteKit jest biblioteką odpowiedzialną za grafikę. Korzystając z jej funkcji będę później generował tło, osie i wszystkie punkty.
 import SpriteKit
+// Foundation jest główną biblioteką w Swifcie. Zawiera funkcje typu potęgowanie
 import Foundation
 
 
+// Klasa "Scene" odpowiada za wypełnienie okna programu zawartością
 class Scene: SKScene {
+    
+    // Wczytuję potrzebne stałe i zmienne
+    // let znaczy, że wartość jest stała, a var, że jest zmienna xd
+    // Tam gdzie wartość jest równa Const.cośtam to znaczy, że wartość jest pobierana z interfejsu (tak w skrócie)
+    // Tam gdzie wartość jest równa Double() to znaczy, że jest jeszcze nie określona
     
     let duration = Const.duration
     let timeStep = Const.timeStep
@@ -22,9 +31,9 @@ class Scene: SKScene {
     let c = Const.c
     
     //Wartości pola magnetycznego
-    var Bx = Const.Bx
-    var By = Const.By
-    var Bz = Const.Bz
+    let Bx = Const.Bx
+    let By = Const.By
+    let Bz = Const.Bz
     
     //Początkowe położenie
     var x = Const.x
@@ -36,12 +45,15 @@ class Scene: SKScene {
     var Vy = Const.Vy
     var Vz = Const.Vz
     
+    //pędy
     var Px = Double()
     var Py = Double()
     var Pz = Double()
     
+    //energia
     var En = Double()
     
+    //jakieśtam wartości potrzebne w metodzie rungego
     var k1x = Double()
     var k2x = Double()
     var k3x = Double()
@@ -57,39 +69,64 @@ class Scene: SKScene {
     var k3z = Double()
     var k4z = Double()
     
-    var time = 0.0
+    //czas :D
+    var time = -0.1
     
 
+    //tutaj generuję obraz
     override func sceneDidLoad() {
         
+        //tło
         backgroundColor = SKColor.white
         
-        let axisX = SKShapeNode(rectOf: CGSize(width:1500, height: 2))
+        //Ośki
+        let axisX = SKShapeNode(rectOf: CGSize(width:2000, height: 3))
         axisX.fillColor = .black
         axisX.lineWidth = 0
         axisX.position = CGPoint(x: 0, y: 0)
         addChild(axisX)
         
-        let axisY = SKShapeNode(rectOf: CGSize(width:2, height: 1000))
+        let axisY = SKShapeNode(rectOf: CGSize(width:3, height: 2000))
         axisY.fillColor = .black
         axisY.lineWidth = 0
         axisY.position = CGPoint(x: 0, y: 0)
         addChild(axisY)
         
-
+        let iksy = SKShapeNode(rectOf: CGSize(width: 3, height: 10))
+        iksy.fillColor = .black
+        iksy.lineWidth = 0
+        for i in 1...40{
+            let ciksy = iksy.copy() as! SKShapeNode
+            ciksy.position = CGPoint(x: -1000 + i*50, y: 0)
+            addChild(ciksy)
+            
+            
+        }
         
-        let pointx = SKShapeNode(circleOfRadius: 1)
-        pointx.fillColor = .red
-        pointx.lineWidth = 0
+        let igrek = SKShapeNode(rectOf: CGSize(width: 10, height: 3))
+        igrek.fillColor = .black
+        igrek.lineWidth = 0
+        for i in 1...40{
+            let cigrek = igrek.copy() as! SKShapeNode
+            cigrek.position = CGPoint(x: 0, y: -1000 + i*50)
+            addChild(cigrek)
+            
+            
+        }
+        
+        
+        
+        //definiuję jak ma wyglądać punkt
+        let pointx = SKShapeNode(circleOfRadius: 2)
+        
         
     
-    
+        //Pętla algorytmu rungekuteka
+        
         while time <= duration {
-            print("")
-            print("time: \(time) / \(duration)")
             
-            
-            if time >= 0.0{
+            // Obliczam pokolei pędy zgodnie z algorytmem
+            if time > 0.0{
                 // Px
                 k1x = timeStep * f(t: time, x1: x, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz, k: k, q: q)
                 k2x = timeStep * f(t: time+timeStep/2, x1: x+k1x/2, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz, k: k, q: q)
@@ -114,66 +151,45 @@ class Scene: SKScene {
                 
                 Pz += (k1z + 2*k2z + 2*k3z + k4z)/6
 
-                
-            }
-            print("Px: \(Px)")
-            print("Py: \(Py)")
-            print("Pz: \(Pz)")
-            
-            //Mam wszystkie pędy dla danego kroku czasowego. Teraz liczę energi
-            En = sqrt(pow(m,2)*pow(c,4) + pow(c,2)*(Px*Px + Py*Py + Pz*Pz))
-            
-            print("En: \(En)")
-            
+
+            //Mam wszystkie pędy dla danego kroku czasowego. Teraz liczę energię
+            En = sqrt(pow(m,2)*pow(c,4) + pow(c,2)*(pow(Px,2) + pow(Py,2) + pow(Pz,2)))
+
             //Mając energię i pędy korzystam z zleżności między pędem, prędkością i energią
-            Vx += Px * pow(c,2) / En
-            Vy += Py * pow(c,2) / En
-            Vz += Pz * pow(c,2) / En
-            
-            print("vx: \(Vx)")
-            print("vy: \(Vy)")
-            print("vz: \(Vz)")
-            
+            Vx = Px * pow(c,2) / En
+            Vy = Py * pow(c,2) / En
+            Vz = Pz * pow(c,2) / En
+            }
             //Obliczam położenie
-            x += Vx * timeStep
-            y += Vy * timeStep
-            z += Vz * timeStep
-            
-            print("x: \(x)")
-            print("y: \(y)")
-            print("z: \(z)")
+            x += Vx * time
+            y += Vy * time
+            z += Vz * time
            
+            //torzę kopię punktu
             let cpointx = pointx.copy() as! SKShapeNode
+            //w punkcie (x, y)
+            cpointx.fillColor = NSColor(red: CGFloat(sqrt(pow(z,2))-100), green: CGFloat(sqrt(pow(x,2))-100), blue: CGFloat(sqrt(pow(y,2))-100), alpha: 1.0)
             cpointx.position = CGPoint(x: x, y: y)
-            
+            cpointx.lineWidth = 0
+            //wyświetlam tę tę kopię
             addChild(cpointx)
             
+            
+            print("x:\(x)")
+            print("y:\(y)")
+            print("")
             //przechodzę do następnego kroku czasowego
             time += timeStep
         }
+        //koniec algorytmu
+    }
+    
+    //funkcja wyznaczona przez Tomka
+    func f(t: Double,x1:Double,x2:Double,x3:Double,v2:Double,v3:Double,B2:Double,B3:Double,k:Double, q:Double) -> Double{
         
+        return q*t*((2*k*x1)/pow(pow(x1,2)+pow(x2,2)+pow(x3,2),2)+v2*B3-v3*B2)
     }
     
 
-    func f(t: Double,x1:Double,x2:Double,x3:Double,v2:Double,v3:Double,B2:Double,B3:Double,k:Double, q:Double) -> Double{
-        
-        let supbro = q*t*((2*k*x1)/pow(pow(x1,2)+pow(x2,2)+pow(x2,2),2)+v2*B3-v3*B2)
-        
-        return supbro
-    }
-    
-    // Lorentz force for constant E
-    
- /*
-    func f(t: Double,x1:Double,x2:Double,x3:Double,v2:Double,v3:Double,B2:Double,B3:Double,k:Double, q:Double) -> Double{
-        
-        let supbro = q*t*(k + v2*B3 - v3*B2)
-        
-        return supbro
-    }
-    */
-    
-      override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-    }
+//koniec klasy. Cały wykres wygenerowany, wszystko fajnie.
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 
+//struktura odpowiadająca za dane przypisane do okienek tekstowych
 struct Const {
     
     static var Bx = Double()

@@ -6,7 +6,9 @@
 //  Copyright © 2017 Bart Robat. All rights reserved.
 //
 
-import Cocoa
+//Wszystko to samo co w "Scene.swift" oprócz samej implementacji algorytmu
+
+import Foundation
 import SpriteKit
 
 
@@ -64,32 +66,49 @@ class Euler: SKScene {
         
         backgroundColor = SKColor.white
         
-        let axisX = SKShapeNode(rectOf: CGSize(width:1500, height: 2))
+        let axisX = SKShapeNode(rectOf: CGSize(width:2000, height: 3))
         axisX.fillColor = .black
         axisX.lineWidth = 0
         axisX.position = CGPoint(x: 0, y: 0)
         addChild(axisX)
         
-        let axisY = SKShapeNode(rectOf: CGSize(width:2, height: 1000))
+        let axisY = SKShapeNode(rectOf: CGSize(width:3, height: 2000))
         axisY.fillColor = .black
         axisY.lineWidth = 0
         axisY.position = CGPoint(x: 0, y: 0)
         addChild(axisY)
         
+        let iksy = SKShapeNode(rectOf: CGSize(width: 3, height: 10))
+        iksy.fillColor = .black
+        iksy.lineWidth = 0
+        for i in 1...40{
+            let ciksy = iksy.copy() as! SKShapeNode
+            ciksy.position = CGPoint(x: -1000 + i*50, y: 0)
+            addChild(ciksy)
+        }
+        
+        let igrek = SKShapeNode(rectOf: CGSize(width: 10, height: 3))
+        igrek.fillColor = .black
+        igrek.lineWidth = 0
+        for i in 1...40{
+            let cigrek = igrek.copy() as! SKShapeNode
+            cigrek.position = CGPoint(x: 0, y: -1000 + i*50)
+            addChild(cigrek)
+        }
         
         
-        let pointx = SKShapeNode(circleOfRadius: 1)
+        let pointx = SKShapeNode(circleOfRadius: 2)
         pointx.fillColor = .red
         pointx.lineWidth = 0
         
         
         
         while time <= duration {
-            print("")
-            print("time: \(time) / \(duration)")
+
             
+            //implementacja algorytmu lol
             
-            if time >= 0.0{
+            //algorytm eulera jest prostszą wersją rungego. Jest włąściwie ograniczony do jednego kroku obliczeń.
                 // Px
                 k1x = timeStep * f(t: time, x1: x, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz, k: k, q: q)
                 Px += (k1x)
@@ -101,41 +120,23 @@ class Euler: SKScene {
                 //Pz
                 k1z = timeStep * f(t: time, x1: z, x2: x, x3: y, v2: Vx, v3: Vy, B2: Bx, B3: By, k: k, q: q)
                 Pz += (k1z)
-                
-                
-            }
-            print("Px: \(Px)")
-            print("Py: \(Py)")
-            print("Pz: \(Pz)")
-            
-            //Mam wszystkie pędy dla danego kroku czasowego. Teraz liczę energi
-            En = sqrt(pow(m,2)*pow(c,4) + pow(c,2)*(Px*Px + Py*Py + Pz*Pz))
-            
-            print("En: \(En)")
+
+            En = sqrt(pow(m,2)*pow(c,4) + pow(c,2)*(pow(Px,2) + pow(Py,2) + pow(Pz,2)))
             
             //Mając energię i pędy korzystam z zleżności między pędem, prędkością i energią
-            Vx += Px * pow(c,2) / En
-            Vy += Py * pow(c,2) / En
-            Vz += Pz * pow(c,2) / En
-            
-            print("vx: \(Vx)")
-            print("vy: \(Vy)")
-            print("vz: \(Vz)")
+            Vx = Px * pow(c,2) / En
+            Vy = Py * pow(c,2) / En
+            Vz = Pz * pow(c,2) / En
             
             //Obliczam położenie
-            x += Vx * timeStep
-            y += Vy * timeStep
-            z += Vz * timeStep
-            
-            print("x: \(x)")
-            print("y: \(y)")
-            print("z: \(z)")
-            
+            x += Vx * time
+            y += Vy * time
+            z += Vz * time
+
             let cpointx = pointx.copy() as! SKShapeNode
+            
             cpointx.position = CGPoint(x: x, y: y)
-            
             addChild(cpointx)
-            
             //przechodzę do następnego kroku czasowego
             time += timeStep
         }
@@ -145,25 +146,9 @@ class Euler: SKScene {
     
     func f(t: Double,x1:Double,x2:Double,x3:Double,v2:Double,v3:Double,B2:Double,B3:Double,k:Double, q:Double) -> Double{
         
-        let supbro = q*t*((2*k*x1)/pow(pow(x1,2)+pow(x2,2)+pow(x2,2),2)+v2*B3-v3*B2)
-        
-        return supbro
+        return q*t*((2*k*x1)/pow(pow(x1,2)+pow(x2,2)+pow(x3,2),2)+v2*B3-v3*B2)
     }
-    
-    // Lorentz force for constant E
-    
-    /*
-     func f(t: Double,x1:Double,x2:Double,x3:Double,v2:Double,v3:Double,B2:Double,B3:Double,k:Double, q:Double) -> Double{
-     
-     let supbro = q*t*(k + v2*B3 - v3*B2)
-     
-     return supbro
-     }
-     */
-    
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-    }
+
 }
     
     

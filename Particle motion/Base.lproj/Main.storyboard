@@ -685,7 +685,7 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Particle_motion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1400" height="900"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                     <connections>
@@ -694,14 +694,14 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="874"/>
+            <point key="canvasLocation" x="361" y="1018"/>
         </scene>
         <!--View Controller2-->
         <scene sceneID="SL4-6R-Rge">
             <objects>
                 <viewController id="J2o-D6-g0C" customClass="ViewController2" customModule="Particle_motion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="1bP-G4-Kdw" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1400" height="900"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                     <connections>
@@ -710,7 +710,7 @@
                 </viewController>
                 <customObject id="gWT-rd-04T" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="874"/>
+            <point key="canvasLocation" x="1763" y="1018"/>
         </scene>
         <!--Menu View-->
         <scene sceneID="Ki4-Q6-som">
