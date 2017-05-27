@@ -112,10 +112,12 @@ class Scene: SKScene {
             addChild(cigrek)
         }
         
+        //Początkowe pędy
         Px = m*Vx/sqrt(1 - pow(Vx,2)/pow(c,2))
         Py = m*Vy/sqrt(1 - pow(Vy,2)/pow(c,2))
         Pz = m*Vz/sqrt(1 - pow(Vz,2)/pow(c,2))
         
+        //Animacja
         run(SKAction.repeat(
             SKAction.sequence([
                 SKAction.run(addPoint),
@@ -128,11 +130,14 @@ class Scene: SKScene {
     
     func addPoint() {
         
+        //określam rozmiar punktu
         let pointx = SKShapeNode(circleOfRadius: 2)
-        
 
         
+        //ten wielki if jest po to, żeby punkty nie generowały się poza określonym obszarem oraz mając prędkość powyżej pewnej określonej (usuwam w ten sposób większość niezgodności numerycznych)
         if time < duration && x > -1000 && x < 1000 && y > -1000 && y < 1000 && z > -1000 && z < 1000 && Vx < maxSpeed && Vy < maxSpeed && Vz < maxSpeed{
+            //Algorytm
+            
             // Px
             k1x = timeStep * f(t: time, x1: x, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz, k: k, q: q)
             k2x = timeStep * f(t: time+timeStep/2, x1: x+k1x/2, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz, k: k, q: q)
@@ -157,26 +162,23 @@ class Scene: SKScene {
             
             Pz += (k1z + 2*k2z + 2*k3z + k4z)/6
         
+            En = sqrt(pow(m,2)*pow(c,4) + pow(c,2)*(pow(Px,2) + pow(Py,2) + pow(Pz,2)))
         
-        En = sqrt(pow(m,2)*pow(c,4) + pow(c,2)*(pow(Px,2) + pow(Py,2) + pow(Pz,2)))
+            Vx = Px * pow(c,2) / En
+            Vy = Py * pow(c,2) / En
+            Vz = Pz * pow(c,2) / En
         
-        Vx = Px * pow(c,2) / En
-        Vy = Py * pow(c,2) / En
-        Vz = Pz * pow(c,2) / En
-        
-        x += Vx * timeStep
-        y += Vy * timeStep
-        z += Vz * timeStep
-        
-        
-            
-        let cpointx = pointx.copy() as! SKShapeNode
-        cpointx.fillColor = NSColor(red: CGFloat(colorC(i:z)), green: 0.2, blue: 0.2, alpha: 1.0)
-        cpointx.position = CGPoint(x: x, y: y)
-        cpointx.lineWidth = 0
+            x += Vx * timeStep
+            y += Vy * timeStep
+            z += Vz * timeStep
 
-        addChild(cpointx)
-            
+            //generacja punktów
+            let cpointx = pointx.copy() as! SKShapeNode
+            cpointx.fillColor = NSColor(red: CGFloat(colorC(i:z)), green: 0.2, blue: 0.2, alpha: 1.0)
+            cpointx.position = CGPoint(x: x, y: y)
+            cpointx.lineWidth = 0
+
+            addChild(cpointx)
         }
     }
     
@@ -184,13 +186,12 @@ class Scene: SKScene {
         
         time += timeStep
     }
-    
+    //Funkcja określająca kolor
     func colorC(i: Double) -> Double {
         
         return sqrt(pow(1/1000*i,2))
-        
     }
-
+    //Funkcja wyznaczona przez Tomasza
     func f(t: Double,x1:Double,x2:Double,x3:Double,v2:Double,v3:Double,B2:Double,B3:Double,k:Double, q:Double) -> Double{
         
         return q*t*((2*k*x1)/pow(pow(x1,2)+pow(x2,2)+pow(x3,2),2)+v2*B3-v3*B2)
