@@ -37,18 +37,18 @@ public class MenuView: NSViewController {
 
     @IBAction func electron(_ sender: NSButton) {
         
-        q.doubleValue = -1.602176e-19
+        q.doubleValue = -1.602e-19
         k.doubleValue = 1.0
-        m.doubleValue = 9.109383e-31
+        m.doubleValue = 9.109e-31
         c.doubleValue = 299792458
 
     }
     
     @IBAction func proton(_ sender: NSButton) {
         
-        q.doubleValue = 1.602176e-19
+        q.doubleValue = 1.602e-19
         k.doubleValue = 1.0
-        m.doubleValue = 1.672621e-27
+        m.doubleValue = 1.672e-27
         c.doubleValue = 299792458
 
     }
