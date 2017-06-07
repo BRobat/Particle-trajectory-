@@ -69,6 +69,21 @@ class Scene: SKScene {
     var k3z = Double()
     var k4z = Double()
     
+    var k1xx = Double()
+    var k2xx = Double()
+    var k3xx = Double()
+    var k4xx = Double()
+    
+    var k1yy = Double()
+    var k2yy = Double()
+    var k3yy = Double()
+    var k4yy = Double()
+    
+    var k1zz = Double()
+    var k2zz = Double()
+    var k3zz = Double()
+    var k4zz = Double()
+    
     //czas :D
     var time = 0.0
     
@@ -139,39 +154,39 @@ class Scene: SKScene {
             //Algorytm
             
             // Px
-            k1x = timeStep * f(t: time, x1: x, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz, k: k, q: q)
-            k2x = timeStep * f(t: time+timeStep/2, x1: x+k1x/2, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz, k: k, q: q)
-            k3x = timeStep * f(t: time+timeStep/2, x1: x+k2x/2, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz, k: k, q: q)
-            k4x = timeStep * f(t: time+timeStep, x1: x+k3x, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz, k: k, q: q)
+            k1x = timeStep * f(t: time, x1: x, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz)
+            k2x = timeStep * f(t: time+timeStep/2, x1: x+k1x/2, x2: y+k1x/2, x3: z+k1x/2, v2: Vy, v3: Vz, B2: By, B3: Bz)
+            k3x = timeStep * f(t: time+timeStep/2, x1: x+k2x/2, x2: y+k2x/2, x3: z+k2x/2, v2: Vy, v3: Vz, B2: By, B3: Bz)
+            k4x = timeStep * f(t: time+timeStep, x1: x+k3x, x2: y+k3x, x3: z+k3x, v2: Vy, v3: Vz, B2: By, B3: Bz)
             
             Px += (k1x + 2*k2x + 2*k3x + k4x)/6
             
             // Py
-            k1y = timeStep * f(t: time, x1: y, x2: z, x3: x, v2: Vz, v3: Vx, B2: Bz, B3: Bx, k: k, q: q)
-            k2y = timeStep * f(t: time+timeStep/2, x1: y+k1y/2, x2: z, x3: x, v2: Vz, v3: Vx, B2: Bz, B3: Bx, k: k, q: q)
-            k3y = timeStep * f(t: time+timeStep/2, x1: y+k2y/2, x2: z, x3: x, v2: Vz, v3: Vx, B2: Bz, B3: Bx, k: k, q: q)
-            k4y = timeStep * f(t: time+timeStep, x1: y+k3y, x2: z, x3: x, v2: Vz, v3: Vx, B2: Bz, B3: Bx, k: k, q: q)
+            k1y = timeStep * f(t: time, x1: y, x2: z, x3: x, v2: Vz, v3: Vx, B2: Bz, B3: Bx)
+            k2y = timeStep * f(t: time+timeStep/2, x1: y+k1y/2, x2: z+k1y/2, x3: x+k1y/2, v2: Vz, v3: Vx, B2: Bz, B3: Bx)
+            k3y = timeStep * f(t: time+timeStep/2, x1: y+k2y/2, x2: z+k2y/2, x3: x+k2y/2, v2: Vz, v3: Vx, B2: Bz, B3: Bx)
+            k4y = timeStep * f(t: time+timeStep, x1: y+k3y, x2: z+k3y, x3: x+k3y, v2: Vz, v3: Vx, B2: Bz, B3: Bx)
             
             Py += (k1y + 2*k2y + 2*k3y + k4y)/6
             
             //Pz
-            k1z = timeStep * f(t: time, x1: z, x2: x, x3: y, v2: Vx, v3: Vy, B2: Bx, B3: By, k: k, q: q)
-            k2z = timeStep * f(t: time+timeStep/2, x1: z+k1z/2, x2: x, x3: y, v2: Vx, v3: Vy, B2: Bx, B3: By, k: k, q: q)
-            k3z = timeStep * f(t: time+timeStep/2, x1: z+k2z/2, x2: x, x3: y, v2: Vx, v3: Vy, B2: Bx, B3: By, k: k, q: q)
-            k4z = timeStep * f(t: time+timeStep, x1: z+k3z, x2: x, x3: y, v2: Vx, v3: Vy, B2: Bx, B3: By, k: k, q: q)
+            k1z = timeStep * f(t: time, x1: z, x2: x, x3: y, v2: Vx, v3: Vy, B2: Bx, B3: By)
+            k2z = timeStep * f(t: time+timeStep/2, x1: z+k1z/2, x2: x+k1z/2, x3: y+k1z/2, v2: Vx, v3: Vy, B2: Bx, B3: By)
+            k3z = timeStep * f(t: time+timeStep/2, x1: z+k2z/2, x2: x+k2z/2, x3: y+k2z/2, v2: Vx, v3: Vy, B2: Bx, B3: By)
+            k4z = timeStep * f(t: time+timeStep, x1: z+k3z, x2: x+k3z, x3: y+k3z, v2: Vx, v3: Vy, B2: Bx, B3: By)
             
             Pz += (k1z + 2*k2z + 2*k3z + k4z)/6
-        
+            
             En = sqrt(pow(m,2)*pow(c,4) + pow(c,2)*(pow(Px,2) + pow(Py,2) + pow(Pz,2)))
-        
-            Vx = Px * pow(c,2) / En
-            Vy = Py * pow(c,2) / En
-            Vz = Pz * pow(c,2) / En
-        
-            x += Vx * timeStep
-            y += Vy * timeStep
-            z += Vz * timeStep
-
+            
+            Vx = Px*pow(c,2)/En
+            Vy = Py*pow(c,2)/En
+            Vz = Pz*pow(c,2)/En
+            
+            x += timeStep * Vx
+            y += timeStep * Vy
+            z += timeStep * Vz
+            
             //generacja punktów
             let cpointx = pointx.copy() as! SKShapeNode
             cpointx.fillColor = NSColor(red: CGFloat(colorC(i:z)), green: 0.2, blue: 0.2, alpha: 1.0)
@@ -192,9 +207,14 @@ class Scene: SKScene {
         return sqrt(pow(1/1000*i,2))
     }
     //Funkcja wyznaczona przez Tomasza
-    func f(t: Double,x1:Double,x2:Double,x3:Double,v2:Double,v3:Double,B2:Double,B3:Double,k:Double, q:Double) -> Double{
+    func f(t: Double,x1:Double,x2:Double,x3:Double,v2:Double,v3:Double,B2:Double,B3:Double) -> Double{
         
         return q*t*((2*k*x1)/pow(pow(x1,2)+pow(x2,2)+pow(x3,2),2)+v2*B3-v3*B2)
+    }
+    
+    func pl(t: Double, V: Double) -> Double{
+        
+        return t*V
     }
 
 }
