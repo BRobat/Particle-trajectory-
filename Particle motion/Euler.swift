@@ -5,9 +5,6 @@
 //  Created by Bart Robat on 21/05/2017.
 //  Copyright © 2017 Bart Robat. All rights reserved.
 //
-
-//Wszystko to samo co w "Scene.swift" oprócz samej implementacji algorytmu
-
 import Foundation
 import SpriteKit
 
@@ -16,37 +13,30 @@ class Euler: SKScene {
     
     let duration = Const.duration
     let timeStep = Const.timeStep
-    
-    //stałe fizyczne
-    let q = Const.q //ładunek
-    let k = Const.k //
-    let m = Const.m //masa
+
+    let q = Const.q
+    let k = Const.k
+    let m = Const.m
     let c = Const.c
-    
-    //Wartości pola magnetycznego
+
     let Bx = Const.Bx
     let By = Const.By
     let Bz = Const.Bz
-    
-    //Początkowe położenie
+
     var x = Const.x
     var y = Const.y
     var z = Const.z
-    
-    //Początkowe wartości prędkości
+
     var Vx = Const.Vx
     var Vy = Const.Vy
     var Vz = Const.Vz
-    
-    //pędy
+
     var Px = Double()
     var Py = Double()
     var Pz = Double()
-    
-    //energia
+
     var En = Double()
-    
-    //jakieśtam wartości potrzebne w metodzie rungego
+
     var k1x = Double()
     var k2x = Double()
     var k3x = Double()
@@ -61,20 +51,15 @@ class Euler: SKScene {
     var k2z = Double()
     var k3z = Double()
     var k4z = Double()
-    
-    //czas :D
+
     var time = 0.0
     
     let maxSpeed = 4000.0
-    
-    
-    //tutaj generuję obraz
+
     override func sceneDidLoad() {
-        
-        //tło
+
         backgroundColor = SKColor.white
-        
-        //Ośki
+
         let axisX = SKShapeNode(rectOf: CGSize(width:2000, height: 3))
         axisX.fillColor = .black
         axisX.lineWidth = 0

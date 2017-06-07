@@ -8,9 +8,6 @@
 
 import Cocoa
 
-
-//klasa odpowiadająca za menu programu. Odbiera dane z okienek tekstowych i przekazuje je dalej
-
 public class MenuView: NSViewController {
 
     

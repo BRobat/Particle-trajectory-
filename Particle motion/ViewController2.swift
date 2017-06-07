@@ -10,8 +10,6 @@ import Cocoa
 import SpriteKit
 import GameplayKit
 
-
-//to samo co w ViewController.swift tylko dla algorytmu eulera
 class ViewController2: NSViewController {
 
     

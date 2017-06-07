@@ -10,7 +10,6 @@ import Cocoa
 import SpriteKit
 import GameplayKit
 
-//Klasa generująca okno programu. Mówi jak zachowuje się okno i jaka klasa odpowiada za wypełnienie samego okna.
 class ViewController: NSViewController {
 
     
