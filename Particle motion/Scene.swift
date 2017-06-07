@@ -6,54 +6,37 @@
 //  Copyright © 2017 Bart Robat. All rights reserved.
 //
 
-// Impotuję dwie biblioteki.
-// SpriteKit jest biblioteką odpowiedzialną za grafikę. Korzystając z jej funkcji będę później generował tło, osie i wszystkie punkty.
 import SpriteKit
-// Foundation jest główną biblioteką w Swifcie. Zawiera funkcje typu potęgowanie
 import Foundation
 
-
-// Klasa "Scene" odpowiada za wypełnienie okna programu zawartością
 class Scene: SKScene {
-    
-    // Wczytuję potrzebne stałe i zmienne
-    // let znaczy, że wartość jest stała, a var, że jest zmienna xd
-    // Tam gdzie wartość jest równa Const.cośtam to znaczy, że wartość jest pobierana z interfejsu (tak w skrócie)
-    // Tam gdzie wartość jest równa Double() to znaczy, że jest jeszcze nie określona
     
     let duration = Const.duration
     let timeStep = Const.timeStep
-    
-    //stałe fizyczne
-    let q = Const.q //ładunek
-    let k = Const.k //
-    let m = Const.m //masa
+
+    let q = Const.q
+    let k = Const.k
+    let m = Const.m
     let c = Const.c
-    
-    //Wartości pola magnetycznego
+
     let Bx = Const.Bx
     let By = Const.By
     let Bz = Const.Bz
-    
-    //Początkowe położenie
+
     var x = Const.x
     var y = Const.y
     var z = Const.z 
-    
-    //Początkowe wartości prędkości
+
     var Vx = Const.Vx
     var Vy = Const.Vy
     var Vz = Const.Vz
-    
-    //pędy
+
     var Px = Double()
     var Py = Double()
     var Pz = Double()
-    
-    //energia
+
     var En = Double()
-    
-    //jakieśtam wartości potrzebne w metodzie rungego
+
     var k1x = Double()
     var k2x = Double()
     var k3x = Double()
@@ -83,20 +66,15 @@ class Scene: SKScene {
     var k2zz = Double()
     var k3zz = Double()
     var k4zz = Double()
-    
-    //czas :D
+
     var time = 0.0
     
     let maxSpeed = 4000.0
-    
 
-    //tutaj generuję obraz
     override func sceneDidLoad() {
-        
-        //tło
+
         backgroundColor = SKColor.white
-        
-        //Ośki
+
         let axisX = SKShapeNode(rectOf: CGSize(width:2000, height: 3))
         axisX.fillColor = .black
         axisX.lineWidth = 0
@@ -126,13 +104,11 @@ class Scene: SKScene {
             cigrek.position = CGPoint(x: 0, y: -1000 + i*50)
             addChild(cigrek)
         }
-        
-        //Początkowe pędy
+
         Px = m*Vx/sqrt(1 - pow(Vx,2)/pow(c,2))
         Py = m*Vy/sqrt(1 - pow(Vy,2)/pow(c,2))
         Pz = m*Vz/sqrt(1 - pow(Vz,2)/pow(c,2))
-        
-        //Animacja
+
         run(SKAction.repeat(
             SKAction.sequence([
                 SKAction.run(addPoint),
@@ -144,32 +120,25 @@ class Scene: SKScene {
     }
     
     func addPoint() {
-        
-        //określam rozmiar punktu
+
         let pointx = SKShapeNode(circleOfRadius: 2)
 
-        
-        //ten wielki if jest po to, żeby punkty nie generowały się poza określonym obszarem oraz mając prędkość powyżej pewnej określonej (usuwam w ten sposób większość niezgodności numerycznych)
         if time < duration && x > -1000 && x < 1000 && y > -1000 && y < 1000 && z > -1000 && z < 1000 && Vx < maxSpeed && Vy < maxSpeed && Vz < maxSpeed{
-            //Algorytm
-            
-            // Px
+
             k1x = timeStep * f(t: time, x1: x, x2: y, x3: z, v2: Vy, v3: Vz, B2: By, B3: Bz)
             k2x = timeStep * f(t: time+timeStep/2, x1: x+k1x/2, x2: y+k1x/2, x3: z+k1x/2, v2: Vy, v3: Vz, B2: By, B3: Bz)
             k3x = timeStep * f(t: time+timeStep/2, x1: x+k2x/2, x2: y+k2x/2, x3: z+k2x/2, v2: Vy, v3: Vz, B2: By, B3: Bz)
             k4x = timeStep * f(t: time+timeStep, x1: x+k3x, x2: y+k3x, x3: z+k3x, v2: Vy, v3: Vz, B2: By, B3: Bz)
             
             Px += (k1x + 2*k2x + 2*k3x + k4x)/6
-            
-            // Py
+
             k1y = timeStep * f(t: time, x1: y, x2: z, x3: x, v2: Vz, v3: Vx, B2: Bz, B3: Bx)
             k2y = timeStep * f(t: time+timeStep/2, x1: y+k1y/2, x2: z+k1y/2, x3: x+k1y/2, v2: Vz, v3: Vx, B2: Bz, B3: Bx)
             k3y = timeStep * f(t: time+timeStep/2, x1: y+k2y/2, x2: z+k2y/2, x3: x+k2y/2, v2: Vz, v3: Vx, B2: Bz, B3: Bx)
             k4y = timeStep * f(t: time+timeStep, x1: y+k3y, x2: z+k3y, x3: x+k3y, v2: Vz, v3: Vx, B2: Bz, B3: Bx)
             
             Py += (k1y + 2*k2y + 2*k3y + k4y)/6
-            
-            //Pz
+
             k1z = timeStep * f(t: time, x1: z, x2: x, x3: y, v2: Vx, v3: Vy, B2: Bx, B3: By)
             k2z = timeStep * f(t: time+timeStep/2, x1: z+k1z/2, x2: x+k1z/2, x3: y+k1z/2, v2: Vx, v3: Vy, B2: Bx, B3: By)
             k3z = timeStep * f(t: time+timeStep/2, x1: z+k2z/2, x2: x+k2z/2, x3: y+k2z/2, v2: Vx, v3: Vy, B2: Bx, B3: By)
@@ -186,8 +155,7 @@ class Scene: SKScene {
             x += timeStep * Vx
             y += timeStep * Vy
             z += timeStep * Vz
-            
-            //generacja punktów
+
             let cpointx = pointx.copy() as! SKShapeNode
             cpointx.fillColor = NSColor(red: CGFloat(colorC(i:z)), green: 0.2, blue: 0.2, alpha: 1.0)
             cpointx.position = CGPoint(x: x, y: y)
@@ -201,20 +169,15 @@ class Scene: SKScene {
         
         time += timeStep
     }
-    //Funkcja określająca kolor
+
     func colorC(i: Double) -> Double {
         
         return sqrt(pow(1/1000*i,2))
     }
-    //Funkcja wyznaczona przez Tomasza
+
     func f(t: Double,x1:Double,x2:Double,x3:Double,v2:Double,v3:Double,B2:Double,B3:Double) -> Double{
         
         return q*t*((2*k*x1)/pow(pow(x1,2)+pow(x2,2)+pow(x3,2),2)+v2*B3-v3*B2)
-    }
-    
-    func pl(t: Double, V: Double) -> Double{
-        
-        return t*V
     }
 
 }
